@@ -4,6 +4,8 @@ from sklearn.metrics import r2_score, mean_squared_error
 from sklearn import tree
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
+
+from models.PlotPredictedAndRealValues import plot_predicted_and_real_values
 from models.PrepareClimateData import prepare_climate_data
 
 
@@ -24,12 +26,4 @@ def climate_tree_regression(data_path: str):
     print('root_mean_squared  error  of is ==', np.sqrt(mean_squared_error(y_test, y_prediction)))
 
     tree.export_graphviz(dtr, feature_names=x_test.loc[:, x_test.columns != 'date'].columns.values, out_file='tree.dot')
-    plt.figure(figsize=(18, 8))
-    plt.scatter(x_test['date'], y_test)
-    plt.scatter(x_test['date'], y_prediction)
-    plt.legend(['real pm10 level', 'predicted pm10 level'])
-    plt.xlabel('Date')
-    plt.ylabel('PM10 [ug/m^3]')
-    plt.title('PM10 level (real and predicted) in Cracow from 2000 to 2021 using decision tree '
-              'regression')
-    plt.show()
+    plot_predicted_and_real_values(x_test['date'], y_test, y_prediction, 'decision tree')

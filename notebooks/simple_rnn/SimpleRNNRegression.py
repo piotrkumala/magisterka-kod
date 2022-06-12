@@ -36,7 +36,7 @@ def simple_rnn_regression(data_path: str):
     history = model.fit(x_train, y_train, epochs=50)
     y_prediction = model.predict(x_test)
 
-    plot_predicted_and_real_values(y_test, y_prediction, date)
+    plot_predicted_and_real_values(date, y_test, y_prediction, 'simple recurrent neural network')
 
 
 
