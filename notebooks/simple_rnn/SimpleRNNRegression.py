@@ -1,5 +1,7 @@
 import tensorflow as tf
 from keras import Model
+
+from models.PlotModelHistory import plot_model_history
 from models.PlotPredictedAndRealValues import plot_predicted_and_real_values
 from models.PrepareClimateData import prepare_climate_data, prepare_climate_data_for_rnn
 from tensorflow import keras
@@ -25,6 +27,7 @@ def simple_rnn_regression(data_path: str):
     y_prediction = model.predict(x_test)
 
     plot_predicted_and_real_values(date, y_test, y_prediction, 'simple recurrent neural network')
+    plot_model_history(history, 'Simple RNN')
 
 
 
