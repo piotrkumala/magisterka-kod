@@ -1,4 +1,5 @@
 import helpers
+from notebooks.gru.GRURegression import gru_regression
 
 from notebooks.linear.ClimateLinearRegression import run_linear_regression_for_climate
 from notebooks.lstm.LSTMRegression import lstm_regression
@@ -10,30 +11,17 @@ run_linear_regression_for_climate('./data/climate_and_air.csv')
 
 climate_tree_regression('data/climate_and_air.csv')
 
-rnn_256_history = simple_rnn_regression('data/climate_and_air.csv', 256, 50)
-rnn_256_history.label = 'Simple RNN with 256 neurons'
+history_list = []
 
-rnn_128_history = simple_rnn_regression('data/climate_and_air.csv', 128, 50)
-rnn_128_history.label = 'Simple RNN with 128 neurons'
+for neurons in [32, 64, 128, 216, 512, 1024]:
+    rnn = simple_rnn_regression('data/climate_and_air.csv', neurons, 50)
+    lstm = lstm_regression('data/climate_and_air.csv', neurons, 50)
+    gru = gru_regression('data/climate_and_air.csv', neurons, 50)
 
-rnn_64_history = simple_rnn_regression('data/climate_and_air.csv', 64, 50)
-rnn_64_history.label = 'Simple RNN with 64 neurons'
+    rnn.label = f'Simple RNN with {neurons} neurons'
+    lstm.label = f'LSTM with {neurons} neurons'
+    gru.label = f'GRU with {neurons} neurons'
+    history_list.extend([rnn, lstm, gru])
 
-rnn_32_history = simple_rnn_regression('data/climate_and_air.csv', 32, 50)
-rnn_32_history.label = 'Simple RNN with 32 neurons'
 
-lstm_256_history = lstm_regression('data/climate_and_air.csv', 256, 50)
-lstm_256_history.label = 'LSTM with 256 neurons'
-
-lstm_128_history = lstm_regression('data/climate_and_air.csv', 128, 50)
-lstm_128_history.label = 'LSTM with 128 neurons'
-
-lstm_64_history = lstm_regression('data/climate_and_air.csv', 64, 50)
-lstm_64_history.label = 'LSTM with 64 neurons'
-
-lstm_32_history = lstm_regression('data/climate_and_air.csv', 32, 50)
-lstm_32_history.label = 'LSTM with 32 neurons'
-
-history_list = [rnn_256_history, rnn_128_history, rnn_64_history, rnn_32_history,
-                lstm_256_history, lstm_128_history, lstm_64_history, lstm_32_history]
 helpers.plot_model_history(history_list)
