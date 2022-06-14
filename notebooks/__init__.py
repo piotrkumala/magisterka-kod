@@ -1,0 +1,5 @@
+from notebooks.linear.ClimateLinearRegression import run_linear_regression_for_climate
+from notebooks.lstm.LSTMRegression import lstm_regression
+from notebooks.gru.GRURegression import gru_regression
+from notebooks.simple_rnn.SimpleRNNRegression import simple_rnn_regression
+from notebooks.tree.ClimateTreeRegression import climate_tree_regression
