@@ -15,10 +15,4 @@ def run_linear_regression_for_climate(data_path: str):
 
     y_prediction = lr.predict(x_test.loc[:, x_test.columns != 'date'])
 
-    score = r2_score(y_test, y_prediction)
-    print('r2 score is ', score)
-    print('mean_sqrd_error is ==', mean_squared_error(y_test, y_prediction))
-    print('root_mean_squared  error  of is ==', np.sqrt(mean_squared_error(y_test, y_prediction)))
-
     helpers.plot_predicted_and_real_values(x_test['date'], y_test, y_prediction, 'linear')
-

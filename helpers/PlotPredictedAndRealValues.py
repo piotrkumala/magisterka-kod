@@ -1,13 +1,16 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.metrics import r2_score, mean_squared_error
+from permetrics.regression import RegressionMetric
 
 
 def plot_predicted_and_real_values(date, y_test, y_prediction, plot_title):
+    evaluator = RegressionMetric(np.array(y_test), np.array(y_prediction), decimal=5)
     score = r2_score(y_test, y_prediction)
     print('r2 score is ', score)
     print('mean_sqrt_error is ==', mean_squared_error(y_test, y_prediction))
     print('root_mean_squared  error  of is ==', np.sqrt(mean_squared_error(y_test, y_prediction)))
+    print('index of agreement - Willmott is ==', evaluator.willmott_index() )
     plt.figure(figsize=(18, 8))
     plt.scatter(date, y_test)
     plt.scatter(date, y_prediction)
