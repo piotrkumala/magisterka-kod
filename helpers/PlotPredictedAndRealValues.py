@@ -4,7 +4,7 @@ from sklearn.metrics import r2_score, mean_squared_error
 from permetrics.regression import RegressionMetric
 
 
-def plot_predicted_and_real_values(date, y_test, y_prediction, plot_title):
+def plot_predicted_and_real_values(date, y_test, y_prediction, plot_title, neurons=0):
     evaluator = RegressionMetric(np.array(y_test), np.array(y_prediction), decimal=5)
     score = r2_score(y_test, y_prediction)
     print('r2 score is ', score)
@@ -18,4 +18,4 @@ def plot_predicted_and_real_values(date, y_test, y_prediction, plot_title):
     plt.xlabel('Date')
     plt.ylabel('PM10 [ug/m^3]')
     plt.title(f'PM10 level (real and predicted) in Cracow from 2000 to 2021 using {plot_title} regression')
-    plt.show()
+    plt.savefig(f'img/{plot_title.replace(" ", "_")}_{neurons} .png')

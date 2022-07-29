@@ -13,7 +13,6 @@ def lstm_regression(data_path: str, neurons: int, epochs: int):
 
     history, y_prediction = helpers.perform_rnn_regression(model, x_test, x_train, y_train, epochs)
 
-    helpers.plot_predicted_and_real_values(date, y_test, y_prediction,
-                                           'long-short term memory neural network')
+    helpers.plot_predicted_and_real_values(date, y_test, y_prediction, 'long-short term memory neural network', neurons)
 
     return history
