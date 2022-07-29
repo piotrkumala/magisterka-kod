@@ -11,7 +11,7 @@ def plot_predicted_and_real_values(date, y_test, y_prediction, plot_title, neuro
     print('mean_sqrt_error is ==', mean_squared_error(y_test, y_prediction))
     print('root_mean_squared  error  of is ==', np.sqrt(mean_squared_error(y_test, y_prediction)))
     print('index of agreement - Willmott is ==', evaluator.willmott_index() )
-    plt.figure(figsize=(18, 8))
+    fig = plt.figure(figsize=(18, 8))
     plt.scatter(date, y_test)
     plt.scatter(date, y_prediction)
     plt.legend(['real pm10 level', 'predicted pm10 level'])
@@ -19,3 +19,4 @@ def plot_predicted_and_real_values(date, y_test, y_prediction, plot_title, neuro
     plt.ylabel('PM10 [ug/m^3]')
     plt.title(f'PM10 level (real and predicted) in Cracow from 2000 to 2021 using {plot_title} regression')
     plt.savefig(f'img/{plot_title.replace(" ", "_")}_{neurons} .png')
+    plt.close(fig)
