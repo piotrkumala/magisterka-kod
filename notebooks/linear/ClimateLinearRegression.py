@@ -1,12 +1,11 @@
-import numpy as np
+import pandas as pd
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score, mean_squared_error
 from sklearn.model_selection import train_test_split
 import helpers
 
 
-def run_linear_regression_for_climate(data_path: str):
-    x, y = helpers.prepare_climate_data(data_path)
+def run_linear_regression_for_climate(df: pd.DataFrame):
+    x, y = helpers.prepare_climate_data(df)
 
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 

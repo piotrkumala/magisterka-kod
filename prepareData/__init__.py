@@ -1,0 +1,3 @@
+from prepareData.PrepareClimateData import prepare_climate_data
+from prepareData.PrepareAirData import prepare_air_data
+from prepareData.MergeClimateAndAir import merge_climate_and_air_data

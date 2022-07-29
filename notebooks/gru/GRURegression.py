@@ -1,9 +1,10 @@
+import pandas as pd
 import tensorflow as tf
 import helpers as helpers
 
 
-def gru_regression(data_path: str, neurons: int, epochs: int):
-    x_train, y_train, x_test, y_test, date = helpers.PrepareClimateData.prepare_climate_data_for_rnn(data_path)
+def gru_regression(df: pd.DataFrame, neurons: int, epochs: int):
+    x_train, y_train, x_test, y_test, date = helpers.PrepareClimateData.prepare_climate_data_for_rnn(df)
 
     model: tf.keras.Model = tf.keras.Sequential()
 

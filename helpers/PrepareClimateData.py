@@ -2,8 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 
-def prepare_climate_data(data_path: str) -> [pd.Series, pd.DataFrame]:
-    df = pd.read_csv(data_path, index_col=0)
+def prepare_climate_data(df: pd.DataFrame) -> [pd.Series, pd.DataFrame]:
     df['date'] = pd.to_datetime(df['date'])
     df = df.drop(['station_code', 'station_name', 'type_precipitation', 'show_height'], axis=1)
     df = df.fillna(0)
@@ -14,8 +13,8 @@ def prepare_climate_data(data_path: str) -> [pd.Series, pd.DataFrame]:
     return x, y
 
 
-def prepare_climate_data_for_rnn(data_path: str) -> [pd.Series, pd.Series, pd.Series, pd.Series, pd.Series]:
-    x,y = prepare_climate_data(data_path)
+def prepare_climate_data_for_rnn(df: pd.DataFrame) -> [pd.Series, pd.Series, pd.Series, pd.Series, pd.Series]:
+    x, y = prepare_climate_data(df)
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
     date = x_test['date']
     x_train = x_train.loc[:, x_train.columns != 'date'].to_numpy()
