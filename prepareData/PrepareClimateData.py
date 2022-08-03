@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-def prepare_climate_data():
+def prepare_climate_data(stationCode: int):
     d_names = ['station_code', 'station_name', 'year', 'month', 'day', 'max_temp', 'status_max_temp', 'min_temp',
                'status_min_temp', 'mean_temp', 'status_mean_temp', 'min_ground_temp', 'status_min_ground_temp',
                'sum_precipitation', 'status_sum_precipitation', 'type_precipitation', 'show_height',
@@ -20,12 +20,12 @@ def prepare_climate_data():
     d = d.assign(date=d['year'].astype(str) + '-' + d['month'].astype(str) + '-' + d['day'].astype(str))
     d['date'] = pd.to_datetime(d['date'])
 
-    d_krakow = d.loc[d['station_code'] == 250190390]
+    d_local = d.loc[d['station_code'] == stationCode]
     # plt.figure(figsize=(24, 12))
     # plt.plot_date(d_krakow['date'].values, d_krakow['mean_temp'].values)
     # plt.xticks(rotation=45)
     # plt.legend()
     # plt.show()
-    return d_krakow[
+    return d_local[
         ['date', 'max_temp', 'min_temp', 'mean_temp', 'min_ground_temp', 'sum_precipitation', 'station_code',
          'station_name', 'type_precipitation', 'show_height']]
