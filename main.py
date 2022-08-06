@@ -4,9 +4,14 @@ import prepareData
 
 
 def main():
-    df = prepareData.merge_climate_and_air_data(
-        [{"stationCode": 250190390, "cityName": 'MpKrak'}, {"stationCode": 252200150, "cityName": 'MzWar'}])
-    notebooks.gru_regression(df.copy(), 128, 50, 'scale', 2)
+    dictionaries_array = [{"stationCode": 250190390, "cityName": 'MpKrak'}, {"stationCode": 252200150, "cityName": 'MzWar'}, {"stationCode": 349220695, "cityName": 'PkPrzem'}, {"stationCode": 249180010, "cityName": 'SlPszcz'}]
+    history_list = []
+    for i in range(1, len(dictionaries_array) + 1):
+        arr = dictionaries_array[slice(0, i)]
+        df = prepareData.merge_climate_and_air_data(arr)
+        gru = notebooks.gru_regression(df.copy(), 128, 50, 'scale', i)
+        history_list.append(gru)
+    helpers.plot_willmott_for_cities(range(1, len(dictionaries_array) + 1), history_list)
 
     compare_models(df)
 
