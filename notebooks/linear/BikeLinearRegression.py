@@ -24,7 +24,7 @@ def run_linear_regression_for_bikes(data_path: str):
 
     score = r2_score(y_test, y_prediction)
     print('r2 score is ', score)
-    print('mean_sqrd_error is ==', mean_squared_error(y_test, y_prediction))
+    print('mean_sqr_error is ==', mean_squared_error(y_test, y_prediction))
     print('root_mean_squared  error  of is ==', np.sqrt(mean_squared_error(y_test, y_prediction)))
 
     plt.title('Total accidents per day')

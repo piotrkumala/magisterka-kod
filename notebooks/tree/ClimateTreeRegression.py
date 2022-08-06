@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
 
 
-def climate_tree_regression(df: pd.DataFrame):
+def climate_tree_regression(df: pd.DataFrame, plots_directories: str):
     x, y = helpers.prepare_climate_data(df)
 
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
@@ -25,4 +25,4 @@ def climate_tree_regression(df: pd.DataFrame):
     print('root_mean_squared  error  of is ==', np.sqrt(mean_squared_error(y_test, y_prediction)))
 
     tree.export_graphviz(dtr, feature_names=x_test.loc[:, x_test.columns != 'date'].columns.values, out_file='tree.dot')
-    helpers.plot_predicted_and_real_values(x_test['date'], y_test, y_prediction, 'decision tree')
+    helpers.plot_predicted_and_real_values(x_test['date'], y_test, y_prediction, 'decision tree', plots_directories)
