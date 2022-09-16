@@ -1,0 +1,690 @@
+/home/pkumala/PycharmProjects/magisterka/venv/bin/python /home/pkumala/PycharmProjects/magisterka/main.py
+2022-08-26 23:15:41.987163: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-26 23:15:41.987178: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+r2 score is  0.3230456324756368
+mean_sqrt_error is == 1386.2897378586617
+root_mean_squared  error  of is == 37.23291202496337
+index of agreement - Willmott is == 0.67193
+['max_temp' 'min_temp' 'mean_temp' 'min_ground_temp' 'sum_precipitation']
+r2 score is  0.2790323712327175
+mean_sqrt_error is == 1476.4215625692177
+root_mean_squared  error  of is == 38.424231450599216
+r2 score is  0.2790323712327175
+mean_sqrt_error is == 1476.4215625692177
+root_mean_squared  error  of is == 38.424231450599216
+index of agreement - Willmott is == 0.68446
+2022-08-26 23:15:53.850511: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:975] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-08-26 23:15:53.850761: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-08-26 23:15:53.850815: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublas.so.11'; dlerror: libcublas.so.11: cannot open shared object file: No such file or directory
+2022-08-26 23:15:53.850864: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublasLt.so.11'; dlerror: libcublasLt.so.11: cannot open shared object file: No such file or directory
+2022-08-26 23:15:53.850914: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcufft.so.10'; dlerror: libcufft.so.10: cannot open shared object file: No such file or directory
+2022-08-26 23:15:53.850962: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcurand.so.10'; dlerror: libcurand.so.10: cannot open shared object file: No such file or directory
+2022-08-26 23:15:53.851010: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusolver.so.11'; dlerror: libcusolver.so.11: cannot open shared object file: No such file or directory
+2022-08-26 23:15:53.851058: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusparse.so.11'; dlerror: libcusparse.so.11: cannot open shared object file: No such file or directory
+2022-08-26 23:15:53.851106: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudnn.so.8'; dlerror: libcudnn.so.8: cannot open shared object file: No such file or directory
+2022-08-26 23:15:53.851113: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-08-26 23:15:53.851310: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ simple_rnn (SimpleRNN)      (1461, 1)                 7
+
+ dense (Dense)               (1461, 1)                 2
+
+=================================================================
+Total params: 9
+Trainable params: 9
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 561us/step
+r2 score is  -0.6348485292207267
+mean_sqrt_error is == 3347.8973587247797
+root_mean_squared  error  of is == 57.86101760879063
+index of agreement - Willmott is == 0.39606
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ lstm (LSTM)                 (1461, 1)                 28
+
+ dense_1 (Dense)             (1461, 1)                 2
+
+=================================================================
+Total params: 30
+Trainable params: 30
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 603us/step
+r2 score is  -0.6826059887898233
+mean_sqrt_error is == 3445.69667767881
+root_mean_squared  error  of is == 58.70005687968973
+index of agreement - Willmott is == 0.39785
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_2"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ gru (GRU)                   (1461, 1)                 24
+
+ dense_2 (Dense)             (1461, 1)                 2
+
+=================================================================
+Total params: 26
+Trainable params: 26
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 606us/step
+r2 score is  -0.5998271080207396
+mean_sqrt_error is == 3276.179324033142
+root_mean_squared  error  of is == 57.23791858578666
+index of agreement - Willmott is == 0.39445
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_3"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ simple_rnn_1 (SimpleRNN)    (1461, 2)                 16
+
+ dense_3 (Dense)             (1461, 1)                 3
+
+=================================================================
+Total params: 19
+Trainable params: 19
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 572us/step
+r2 score is  -0.36679603281516227
+mean_sqrt_error is == 2798.970514019762
+root_mean_squared  error  of is == 52.905297598820496
+index of agreement - Willmott is == 0.37352
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_4"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ lstm_1 (LSTM)               (1461, 2)                 64
+
+ dense_4 (Dense)             (1461, 1)                 3
+
+=================================================================
+Total params: 67
+Trainable params: 67
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 623us/step
+r2 score is  -0.4873743352626656
+mean_sqrt_error is == 3045.894784414363
+root_mean_squared  error  of is == 55.18962569554502
+index of agreement - Willmott is == 0.38709
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_5"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ gru_1 (GRU)                 (1461, 2)                 54
+
+ dense_5 (Dense)             (1461, 1)                 3
+
+=================================================================
+Total params: 57
+Trainable params: 57
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 625us/step
+r2 score is  -0.3569668616150976
+mean_sqrt_error is == 2778.8420093228556
+root_mean_squared  error  of is == 52.71472288955767
+index of agreement - Willmott is == 0.37204
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_6"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ simple_rnn_2 (SimpleRNN)    (1461, 4)                 40
+
+ dense_6 (Dense)             (1461, 1)                 5
+
+=================================================================
+Total params: 45
+Trainable params: 45
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 567us/step
+r2 score is  -0.05247457928105059
+mean_sqrt_error is == 2155.29255531677
+root_mean_squared  error  of is == 46.4251284900405
+index of agreement - Willmott is == 0.30509
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_7"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ lstm_2 (LSTM)               (1461, 4)                 160
+
+ dense_7 (Dense)             (1461, 1)                 5
+
+=================================================================
+Total params: 165
+Trainable params: 165
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 599us/step
+r2 score is  -0.15986088305783874
+mean_sqrt_error is == 2375.2018107319464
+root_mean_squared  error  of is == 48.736042214483795
+index of agreement - Willmott is == 0.31688
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_8"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ gru_2 (GRU)                 (1461, 4)                 132
+
+ dense_8 (Dense)             (1461, 1)                 5
+
+=================================================================
+Total params: 137
+Trainable params: 137
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 628us/step
+r2 score is  -0.039454048965891
+mean_sqrt_error is == 2128.628678956251
+root_mean_squared  error  of is == 46.137064047859084
+index of agreement - Willmott is == 0.30584
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_9"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ simple_rnn_3 (SimpleRNN)    (1461, 8)                 112
+
+ dense_9 (Dense)             (1461, 1)                 9
+
+=================================================================
+Total params: 121
+Trainable params: 121
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 566us/step
+r2 score is  0.15284515482988725
+mean_sqrt_error is == 1734.8319540819043
+root_mean_squared  error  of is == 41.651313953846696
+index of agreement - Willmott is == 0.41937
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_10"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ lstm_3 (LSTM)               (1461, 8)                 448
+
+ dense_10 (Dense)            (1461, 1)                 9
+
+=================================================================
+Total params: 457
+Trainable params: 457
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 670us/step
+r2 score is  0.0965421145443679
+mean_sqrt_error is == 1850.1311983182586
+root_mean_squared  error  of is == 43.013151457644426
+index of agreement - Willmott is == 0.30057
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_11"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ gru_3 (GRU)                 (1461, 8)                 360
+
+ dense_11 (Dense)            (1461, 1)                 9
+
+=================================================================
+Total params: 369
+Trainable params: 369
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 624us/step
+r2 score is  0.16764076659235871
+mean_sqrt_error is == 1704.5330067146476
+root_mean_squared  error  of is == 41.2859904412459
+index of agreement - Willmott is == 0.43926
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_12"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ simple_rnn_4 (SimpleRNN)    (1461, 16)                352
+
+ dense_12 (Dense)            (1461, 1)                 17
+
+=================================================================
+Total params: 369
+Trainable params: 369
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 568us/step
+r2 score is  0.2445796913870807
+mean_sqrt_error is == 1546.9749097414958
+root_mean_squared  error  of is == 39.33160192188332
+index of agreement - Willmott is == 0.57495
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_13"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ lstm_4 (LSTM)               (1461, 16)                1408
+
+ dense_13 (Dense)            (1461, 1)                 17
+
+=================================================================
+Total params: 1,425
+Trainable params: 1,425
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 626us/step
+r2 score is  0.21228762515615418
+mean_sqrt_error is == 1613.1036802728042
+root_mean_squared  error  of is == 40.163462005569244
+index of agreement - Willmott is == 0.50746
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_14"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ gru_4 (GRU)                 (1461, 16)                1104
+
+ dense_14 (Dense)            (1461, 1)                 17
+
+=================================================================
+Total params: 1,121
+Trainable params: 1,121
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 669us/step
+r2 score is  0.2692399495957102
+mean_sqrt_error is == 1496.4748102848844
+root_mean_squared  error  of is == 38.68429668851282
+index of agreement - Willmott is == 0.59659
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_15"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ simple_rnn_5 (SimpleRNN)    (1461, 32)                1216
+
+ dense_15 (Dense)            (1461, 1)                 33
+
+=================================================================
+Total params: 1,249
+Trainable params: 1,249
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 571us/step
+r2 score is  0.30328950301291135
+mean_sqrt_error is == 1426.7469988615576
+root_mean_squared  error  of is == 37.77230465382748
+index of agreement - Willmott is == 0.64211
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_16"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ lstm_5 (LSTM)               (1461, 32)                4864
+
+ dense_16 (Dense)            (1461, 1)                 33
+
+=================================================================
+Total params: 4,897
+Trainable params: 4,897
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 646us/step
+r2 score is  0.30406076119113656
+mean_sqrt_error is == 1425.1675906340527
+root_mean_squared  error  of is == 37.75139190326699
+index of agreement - Willmott is == 0.63498
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_17"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ gru_5 (GRU)                 (1461, 32)                3744
+
+ dense_17 (Dense)            (1461, 1)                 33
+
+=================================================================
+Total params: 3,777
+Trainable params: 3,777
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 607us/step
+r2 score is  0.3340688350318701
+mean_sqrt_error is == 1363.716055916217
+root_mean_squared  error  of is == 36.92852631660539
+index of agreement - Willmott is == 0.65268
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_18"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ simple_rnn_6 (SimpleRNN)    (1461, 64)                4480
+
+ dense_18 (Dense)            (1461, 1)                 65
+
+=================================================================
+Total params: 4,545
+Trainable params: 4,545
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 553us/step
+r2 score is  0.357958906185311
+mean_sqrt_error is == 1314.7931712056218
+root_mean_squared  error  of is == 36.260076822941535
+index of agreement - Willmott is == 0.69201
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_19"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ lstm_6 (LSTM)               (1461, 64)                17920
+
+ dense_19 (Dense)            (1461, 1)                 65
+
+=================================================================
+Total params: 17,985
+Trainable params: 17,985
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 615us/step
+r2 score is  0.3447471278852905
+mean_sqrt_error is == 1341.848691569811
+root_mean_squared  error  of is == 36.63125293475247
+index of agreement - Willmott is == 0.6796
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_20"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ gru_6 (GRU)                 (1461, 64)                13632
+
+ dense_20 (Dense)            (1461, 1)                 65
+
+=================================================================
+Total params: 13,697
+Trainable params: 13,697
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 648us/step
+r2 score is  0.3750711926333198
+mean_sqrt_error is == 1279.7500601301642
+root_mean_squared  error  of is == 35.77359445359334
+index of agreement - Willmott is == 0.70684
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_21"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ simple_rnn_7 (SimpleRNN)    (1461, 128)               17152
+
+ dense_21 (Dense)            (1461, 1)                 129
+
+=================================================================
+Total params: 17,281
+Trainable params: 17,281
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 561us/step
+r2 score is  0.3757818690928585
+mean_sqrt_error is == 1278.2947131672677
+root_mean_squared  error  of is == 35.75324758909696
+index of agreement - Willmott is == 0.71189
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_22"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ lstm_7 (LSTM)               (1461, 128)               68608
+
+ dense_22 (Dense)            (1461, 1)                 129
+
+=================================================================
+Total params: 68,737
+Trainable params: 68,737
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 707us/step
+r2 score is  0.3766075834054059
+mean_sqrt_error is == 1276.6037878511734
+root_mean_squared  error  of is == 35.72959260684585
+index of agreement - Willmott is == 0.69922
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_23"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ gru_7 (GRU)                 (1461, 128)               51840
+
+ dense_23 (Dense)            (1461, 1)                 129
+
+=================================================================
+Total params: 51,969
+Trainable params: 51,969
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 654us/step
+r2 score is  0.39277533871551795
+mean_sqrt_error is == 1243.4949191506378
+root_mean_squared  error  of is == 35.263223323324226
+index of agreement - Willmott is == 0.72068
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_24"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ simple_rnn_8 (SimpleRNN)    (1461, 256)               67072
+
+ dense_24 (Dense)            (1461, 1)                 257
+
+=================================================================
+Total params: 67,329
+Trainable params: 67,329
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 630us/step
+r2 score is  0.39049753284004296
+mean_sqrt_error is == 1248.1594860128814
+root_mean_squared  error  of is == 35.329300672570376
+index of agreement - Willmott is == 0.7171
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_25"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ lstm_8 (LSTM)               (1461, 256)               268288
+
+ dense_25 (Dense)            (1461, 1)                 257
+
+=================================================================
+Total params: 268,545
+Trainable params: 268,545
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 899us/step
+r2 score is  0.3948463558971018
+mean_sqrt_error is == 1239.2538210744733
+root_mean_squared  error  of is == 35.20303710014909
+index of agreement - Willmott is == 0.71538
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_26"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ gru_8 (GRU)                 (1461, 256)               201984
+
+ dense_26 (Dense)            (1461, 1)                 257
+
+=================================================================
+Total params: 202,241
+Trainable params: 202,241
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 847us/step
+r2 score is  0.39873139829888316
+mean_sqrt_error is == 1231.297901634244
+root_mean_squared  error  of is == 35.0898546824327
+index of agreement - Willmott is == 0.7053
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_27"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ simple_rnn_9 (SimpleRNN)    (1461, 512)               265216
+
+ dense_27 (Dense)            (1461, 1)                 513
+
+=================================================================
+Total params: 265,729
+Trainable params: 265,729
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 724us/step
+r2 score is  0.3933988476021192
+mean_sqrt_error is == 1242.2180768516214
+root_mean_squared  error  of is == 35.24511422667859
+index of agreement - Willmott is == 0.71868
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_28"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ lstm_9 (LSTM)               (1461, 512)               1060864
+
+ dense_28 (Dense)            (1461, 1)                 513
+
+=================================================================
+Total params: 1,061,377
+Trainable params: 1,061,377
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 2ms/step
+r2 score is  0.40568494612518025
+mean_sqrt_error is == 1217.0581944165222
+root_mean_squared  error  of is == 34.88636115183873
+index of agreement - Willmott is == 0.73414
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_29"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ gru_9 (GRU)                 (1461, 512)               797184
+
+ dense_29 (Dense)            (1461, 1)                 513
+
+=================================================================
+Total params: 797,697
+Trainable params: 797,697
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 1ms/step
+r2 score is  0.40574251303489783
+mean_sqrt_error is == 1216.9403069782986
+root_mean_squared  error  of is == 34.88467151885336
+index of agreement - Willmott is == 0.72385
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_30"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ simple_rnn_10 (SimpleRNN)   (1461, 1024)              1054720
+
+ dense_30 (Dense)            (1461, 1)                 1025
+
+=================================================================
+Total params: 1,055,745
+Trainable params: 1,055,745
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 1ms/step
+r2 score is  0.39093473380145316
+mean_sqrt_error is == 1247.264171298536
+root_mean_squared  error  of is == 35.31662740549465
+index of agreement - Willmott is == 0.73376
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_31"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ lstm_10 (LSTM)              (1461, 1024)              4218880
+
+ dense_31 (Dense)            (1461, 1)                 1025
+
+=================================================================
+Total params: 4,219,905
+Trainable params: 4,219,905
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 3ms/step
+r2 score is  0.4053292347599028
+mean_sqrt_error is == 1217.7866320173123
+root_mean_squared  error  of is == 34.89679973890603
+index of agreement - Willmott is == 0.74786
+(1461, 1, 5)
+(5844, 1, 5)
+Model: "sequential_32"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ gru_10 (GRU)                (1461, 1024)              3167232
+
+ dense_32 (Dense)            (1461, 1)                 1025
+
+=================================================================
+Total params: 3,168,257
+Trainable params: 3,168,257
+Non-trainable params: 0
+_________________________________________________________________
+46/46 [==============================] - 0s 2ms/step
+r2 score is  0.40479090554277375
+mean_sqrt_error is == 1218.8890405474833
+root_mean_squared  error  of is == 34.91259143271211
+index of agreement - Willmott is == 0.7308
+
+Process finished with exit code 0
